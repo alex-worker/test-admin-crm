@@ -1,8 +1,29 @@
 import "reflect-metadata";
-import {createConnection} from "typeorm";
+import {ConnectionOptions, createConnection} from "typeorm";
 import {User} from "./entity/User";
 
-createConnection().then(async connection => {
+const options: ConnectionOptions = {
+    type: "sqlite",
+    database: "./data/line.sqlite",
+    synchronize: true,
+    logging: true,
+    entities: [
+        "src/entity/**/*.ts"
+     ],
+     migrations: [
+        "src/migration/**/*.ts"
+     ],
+     subscribers: [
+        "src/subscriber/**/*.ts"
+     ],
+     cli: {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+     }
+  }
+
+createConnection(options).then(async connection => {
 
     console.log("Inserting a new user into the database...");
     const user = new User();
