@@ -1,0 +1,16 @@
+{
+  "name": "test-admin-crm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/alex-worker/test-admin-crm.git",
+  "author": "alex-worker <43813540+alex-worker@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}
