@@ -11,6 +11,6 @@
     "start": "node server/index.js"
   },
   "devDependencies": {
-    "standard": "^13.0.2"
+    "standard": "^13.1.0"
   }
 }
